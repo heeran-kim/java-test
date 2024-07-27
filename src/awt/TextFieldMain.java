@@ -29,6 +29,8 @@ public class TextFieldMain extends Frame {
             }
         });
 
+        setLayout(new FlowLayout()); // without this, there will be a big button
+
         addLabel();
         addTextField();
         addButton();
@@ -36,7 +38,6 @@ public class TextFieldMain extends Frame {
     }
 
     private void addButton() {
-        setLayout(new FlowLayout()); // without this, there will be a big button
         button = new Button("Click Me");
         button.addActionListener(new ActionListener() {
             @Override

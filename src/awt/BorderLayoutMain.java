@@ -1,19 +1,21 @@
 package awt;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class LayoutMain extends Frame {
+public class BorderLayoutMain extends Frame {
+
+    private TextField textField;
+    private Label label;
+    private Button button;
 
     public static void main(String[] args) {
-        new LayoutMain();
+        new BorderLayoutMain();
     }
 
-    public LayoutMain() {
-        setTitle("AWT Example");
+    public BorderLayoutMain() {
+        setTitle("Border Layout Example");
         setSize(400, 300);
         centerWindow();
         setVisible(true);
@@ -24,32 +26,38 @@ public class LayoutMain extends Frame {
                 System.exit(0);
             }
         });
-        setLayout(new BorderLayout());
+
+        setLayout();
+
         addLabel();
         addTextField();
         addButton();
         setVisible(true); // after implementing all functions
     }
 
+    private void setLayout() {
+        // setLayout(new FlowLayout());
+        setLayout(new BorderLayout());
+    }
+
     private void addButton() {
-        Button button = new Button("Click Me");
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Button Clicked");
-            }
+        button = new Button("Click Me");
+        button.addActionListener(e -> {
+            String text = textField.getText();
+            System.out.println(text);
+            label.setText(text);
         });
-        add(button, BorderLayout.SOUTH);
+        add(button, BorderLayout.EAST);
     }
 
     private void addLabel() {
-        Label label = new Label("Enter Text");
-        add(label, BorderLayout.NORTH);
+        label = new Label("Enter Text");
+        add(label, BorderLayout.CENTER);
     }
 
     private void addTextField() {
-        TextField textField = new TextField(20);
-        add(textField, BorderLayout.CENTER);
+        textField = new TextField(20);
+        add(textField, BorderLayout.NORTH);
     }
 
     private void centerWindow() {
