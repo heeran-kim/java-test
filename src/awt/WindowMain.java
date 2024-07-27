@@ -4,13 +4,13 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class AwtTestMain1 extends Frame {
+public class WindowMain extends Frame {
 
     public static void main(String[] args) {
-        new AwtTestMain1();
+        new WindowMain();
     }
 
-    public AwtTestMain1() {
+    public WindowMain() {
 //        setSize(new Dimension(300, 200));
         setSize(300, 200);
         setVisible(true);

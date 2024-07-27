@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class AwtTestMain2 extends Frame {
+public class ButtonMain extends Frame {
 
     public static void main(String[] args) {
-        new AwtTestMain2();
+        new ButtonMain();
     }
 
-    public AwtTestMain2() {
+    public ButtonMain() {
         setTitle("AWT Example");
         setSize(400, 300);
         centerWindow();
@@ -25,11 +25,11 @@ public class AwtTestMain2 extends Frame {
             }
         });
         addButton();
-        setVisible(true);
+        setVisible(true); // after implementing all functions
     }
 
     private void addButton() {
-        setLayout(new FlowLayout());
+        setLayout(new FlowLayout()); // without this, there will be a big button
         Button button = new Button("Click Me");
         button.addActionListener(new ActionListener() {
             @Override
