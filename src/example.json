@@ -1,0 +1,11 @@
+{
+  "id": 101,
+  "name": "Alice",
+  "isActive": true,
+  "scores": [95, 87, 90],
+  "address": {
+    "city": "Los Angeles",
+    "zipCode": 90001
+  },
+  "skills": ["Java", "Python"]
+}
