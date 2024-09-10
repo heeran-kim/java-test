@@ -3,7 +3,9 @@ package classes.immutable;
 import java.util.ArrayList;
 import java.util.List;
 
+// The class is final
 public final class ImmutablePerson {
+    // All attributes are private and final
     private final String name;
     private final int age;
     private final List<String> hobbies;
@@ -29,6 +31,8 @@ public final class ImmutablePerson {
     public List<String> getHobbies() {
         return new ArrayList<>(hobbies);
     }
+
+    // No setters
 
     @Override
     public String toString() {
